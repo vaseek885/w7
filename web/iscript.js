@@ -228,12 +228,12 @@ function drawFigure(context){
     context.lineTo(299,301);
     context.lineTo(299,(301 + (r/2)*pixel_transform));
     /*Triangle fill*/
-    context.moveTo((299 - r/2 *pixel_transform), 299);
+    context.moveTo((299 + r/2 *pixel_transform), 299);
     context.lineTo(299, 299);
-    context.lineTo(299, (299 - r/2 *pixel_transform));
-    context.lineTo((299 - r/2 *pixel_transform), 299);
+    context.lineTo(299, (299 + r *pixel_transform));
+    context.lineTo((299 + r/2 *pixel_transform), 299);
     /*Rectangle fill */
-    context.rect(301,301, r*pixel_transform, r*pixel_transform );
+    context.rect(301,301, r/2*pixel_transform, -r*pixel_transform );
     context.closePath();
     context.fillStyle="#5c99ED";
     context.fill();

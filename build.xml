@@ -1,4 +1,4 @@
-<project default="build-war" name="lab" >
+<project default="war-build" name="lab" >
 	<property name="src" location="src" />
 	<property name="build" location ="build" />
 	<property name="class" location="class" />
