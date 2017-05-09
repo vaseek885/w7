@@ -7,6 +7,7 @@
     <meta charset="UTF-8">
     <title>Form</title>
     <script src="iscript.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 </head>
 
 <body>
@@ -15,17 +16,17 @@
     <table>
         <tr>
             <td>
-                <label for="radius">Coordinate X: </label>
+                <label for="radius">X: </label>
                 <select required id="x_coord" name="x_coord">
-                  <option value="1">-4</option>
-                  <option value="2">-3</option>
-                  <option value="3">-2</option>
-                  <option value="4">-1</option>
-                  <option value="1">0</option>
-                  <option value="2">1</option>
-                  <option value="3">2</option>
-                  <option value="4">3</option>
-                  <option value="5">4</option>
+                  <option value="-4">-4</option>
+                  <option value="-3">-3</option>
+                  <option value="-2">-2</option>
+                  <option value="-1">-1</option>
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
 
                 </select>
             </td>
@@ -53,6 +54,11 @@
     </table>
     <input type="submit" value="Отправить">
 </form>
+<h3 class=" h3_first h3_second" align="center"> Points</h3>
+<div style="height: calc(100vh - 200px); overflow-y: scroll;">
+  <div id="for_adding" align="right">
+  </div>
+</div>
 
 <%
         List<AreaCheckServlet.Point> list=(ArrayList<AreaCheckServlet.Point>)getServletConfig().getServletContext().getAttribute("list");
