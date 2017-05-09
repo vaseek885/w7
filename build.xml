@@ -1,0 +1,43 @@
+<project default="build-war" name="lab" >
+	<property name="src" location="src" />
+	<property name="build" location ="build" />
+	<property name="class" location="class" />
+	<property name="web" location="web" />
+	<property name="lib" location="lib" />
+
+
+   <path id="myclasspath" >
+    <fileset dir="${lib}">
+      <include name="*.jar"/>
+    </fileset>
+   </path>
+
+	<target name="mkdirs" description="Make auxiliary dir">
+		<mkdir dir="${lib}" />
+		<mkdir dir="${build}" />
+		<mkdir dir="${class}" />
+	</target>
+
+	<target name="compile" description="Compilation step" depends="mkdirs">
+		<javac destdir="${class}" classpathref="myclasspath">
+			<src path="${src}" />
+		</javac>	
+	</target>
+
+	<target name="war-build" depends="compile">
+		<war destfile="${build}/lab7.war" webxml="${web}/WEB-INF/web.xml">
+			<fileset dir="${web}"/>
+			<classes dir="${class}"/>
+		</war>
+	</target>
+
+
+	<target name="clean">
+		<delete includeemptydirs="true">
+			<fileset dir="${class}" includes="**/*"/>
+			<fileset dir="${build}" includes="**/*" />
+		</delete>
+	</target>
+
+
+</project>
